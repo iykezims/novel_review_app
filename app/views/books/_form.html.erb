@@ -1,0 +1,12 @@
+<%= simple_form_for @book, :html =>{ :multipart => true } do |f| %>
+<%= select_tag(:category_id, options_for_select(@categories), :prompt => "Select a category") %>
+<%= f.file_field :cover %>
+<%= f.hidden_field :cover_cache %>
+<%= label_tag :remove_cover do %>Remove image
+<%= f.check_box :remove_cover %>
+<%= f.input :title, label: "Novel Title", placeholder: "novel title here..." %>
+<%= f.input :description, placeholder: "text here..." %>
+<%= f.input :author, placeholder: "author here..." %>
+<%= f.button :submit, :class => 'btn-custom2' %>
+<% end %>
+<% end %>
